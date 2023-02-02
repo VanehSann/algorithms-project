@@ -1,5 +1,5 @@
 def is_anagram(first_string, second_string):
-    if (first_string == "" and second_string == ""):
+    if first_string == "" and second_string == "":
         return ("", "", False)
 
     list_first = list(first_string.lower())
@@ -8,12 +8,10 @@ def is_anagram(first_string, second_string):
     join_One(list_first)
     join_One(list_second)
 
-    sorted_first = ''.join(list_first)
-    sorted_second = ''.join(list_second)
-
+    sorted_first = "".join(list_first)
+    sorted_second = "".join(list_second)
 
     return (sorted_first, sorted_second, sorted_first == sorted_second)
-
 
 
 def join_One(list, start=0, end=None):
@@ -21,9 +19,10 @@ def join_One(list, start=0, end=None):
         end = len(list)
     if (end - start) > 1:
         mid = (start + end) // 2
-        join_One(list, start, mid) 
+        join_One(list, start, mid)
         join_One(list, mid, end)
         orderOne(list, start, mid, end)
+
 
 def orderOne(string, start, mid, end):
 
@@ -45,4 +44,3 @@ def orderOne(string, start, mid, end):
         else:
             string[ab_index] = b[b_index]
             b_index += 1
-
